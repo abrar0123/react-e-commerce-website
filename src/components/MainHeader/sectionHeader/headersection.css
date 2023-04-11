@@ -1,6 +1,6 @@
 .headsectionCard {
   height: 90vh;
-  background: linear-gradient(to right, rgb(94, 11, 228), rgb(84, 109, 200));
+  background: linear-gradient(to right, rgb(126, 2, 250), rgb(51, 51, 241));
   /* background-color: rgb(94, 11, 228); */
 }
 .headerMainContainer {
@@ -25,13 +25,13 @@
 .headerMainContainer h1 {
   margin: 0;
   text-transform: uppercase;
-  font-size: 70px;
+  font-size: 63px;
 }
 
 .headerMainContainer p {
-  width: 540px;
+  width: 500px;
   text-align: center;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }

@@ -15,7 +15,7 @@ export default function headerSection() {
           style={{
             alignItems: "center",
             justifyContent: "space-between",
-            height: "50vh",
+            height: "270px",
           }}
         >
           <h1>Sephora Sales </h1>
