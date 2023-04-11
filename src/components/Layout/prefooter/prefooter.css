@@ -1,0 +1,21 @@
+.prefooter {
+  background: linear-gradient(
+    to right,
+    rgb(0, 51, 255),
+    rgb(157, 132, 186),
+    rgb(156, 23, 245)
+  );
+  height: 300px;
+  color: rgb(0, 51, 255);
+}
+.prefooter input[type="text"] {
+  height: 32px;
+  box-sizing: border-box;
+  padding: 1px 10px;
+  color: black;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.prefooter input[type="text"]:focus {
+  outline: none;
+}
