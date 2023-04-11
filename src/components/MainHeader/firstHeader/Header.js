@@ -1,14 +1,14 @@
 import React from "react";
 import "./header.css";
 import Logo1 from "../../../assets/Icons/logo4.png";
+import { IoIosSearch, IoIosCart, IoIosHeartEmpty } from "react-icons/io";
+import Card from "../../common/UI/Card/card";
+import Container from "../../common/UI/Card/Container";
 
 export default function Header() {
   return (
     <header>
-      <div className="headercontainer">
-        <div className="imgcontainer">
-          <img src={Logo1} alt="" />
-        </div>
+      <Card className="headercontainer">
         <nav>
           <ul>
             <li>
@@ -22,18 +22,31 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <Container>
+          <h1>Sephora Store</h1>
+        </Container>
+
         <nav>
           <ul>
             {/* course */}
             <li>
-              <a href="#"> Sign in</a>
+              <a href="#">
+                <IoIosSearch color="white" size={25} />
+              </a>
             </li>
             <li>
-              <a href="#"> Register </a>
+              <a href="#">
+                <IoIosHeartEmpty color="white" size={25} />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <IoIosCart color="white" size={25} />
+              </a>
             </li>
           </ul>
         </nav>
-      </div>
+      </Card>
     </header>
   );
 }

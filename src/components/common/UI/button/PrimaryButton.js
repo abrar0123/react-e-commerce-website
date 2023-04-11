@@ -3,7 +3,7 @@ import styles from "./Button.module.css";
 const PrimaryButton = (props) => {
   return (
     <button
-      className={` ${props.custombtnStyle} ${styles.buttonstyle}`}
+      className={` ${props.className} ${styles.primarybuttonstyle}`}
       type={props.type || "submit"}
       onClick={props.onclick}
     >

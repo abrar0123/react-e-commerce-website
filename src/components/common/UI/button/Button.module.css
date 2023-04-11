@@ -1,45 +1,49 @@
 .buttonstyle {
-  /* width: 100%; */
-  height: 35px;
-  background-color: rgb(39, 201, 39);
+  background-color: rgb(201, 74, 39);
   font-size: 16px;
+  border: none;
   color: white;
   font-weight: bold;
-  padding: 4px 10px;
+  padding: 7px 13px;
+  box-shadow: 1px 1px 5px rgb(18, 17, 17, 0.3);
+}
+
+.buttonstyle:not(:last-child) {
+  margin-right: 10px;
 }
 .buttonstyle:hover {
   cursor: pointer;
-  background-color: green;
-  transition: 1s;
+  background-color: rgb(172, 53, 20);
+  transition: all 0.3s ease;
 }
-.inp {
-  margin: 20px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 40rem;
-}
-.inp input {
-  font: inherit;
-  height: 30px;
-
-  display: block;
-  width: 80%;
-  background-color: rgb(248, 69, 69);
-  border: 1px solid #ccc;
-  padding: 0.15rem;
-  margin-bottom: 0.5rem;
-}
-.mainContainer {
-  width: 500px;
-  /* height: 200px; */
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+.buttonstyle:active {
+  background-color: rgb(150, 40, 10);
+  transform: translate(-0.3px, -0.3px);
 }
 
-.mainContainerFlex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
+/*  primary button style  */
+
+.primarybuttonstyle {
+  background-color: rgb(201, 39, 187);
+  font-size: 16px;
+  border-radius: 25px;
+
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  box-shadow: 1px 1px 10px rgb(18, 17, 17, 0.3);
+}
+
+.primarybuttonstyle:not(:last-child) {
+  margin-right: 10px;
+}
+.primarybuttonstyle:hover {
+  cursor: pointer;
+  background-color: rgb(178, 27, 165);
+
+  transition: all 0.3s ease;
+}
+.primarybuttonstyle:active {
+  transform: translate(-0.3px, -0.3px);
 }

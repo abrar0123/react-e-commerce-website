@@ -1,5 +1,10 @@
 import React from "react";
+import styles from "./maincard.module.css";
 
 export default function FlexRow(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return (
+    <div className={`${styles.flexRowContainer}  ${props.className}`}>
+      {props.children}
+    </div>
+  );
 }
