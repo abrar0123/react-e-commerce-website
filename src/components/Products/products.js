@@ -4,20 +4,24 @@ import Card from "../../components/common/UI/Card/card";
 import Container from "../../components/common/UI/Card/Container";
 import FlexRow from "../../components/common/UI/Card/FlexRow";
 import ProductCatagories from "../productsCatagories/productCatagories";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 // import CartModel from "../CartModel/CartModel";
-// import { useDispatch } from "react-redux";
-// import { cartActions } from "../../Redux/cartSlice";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Redux/cartSlice";
 import ProductsDetails from "./productsDetails";
+import { shopActions } from "../../Redux/shopapiSlice";
 
 const Products = () => {
   const [myFood, setmyFood] = useState("");
-  // const userfoodCart = useSelector((state) => state.cart.foodCart);
-  // const Dispatch = useDispatch();
+  const usershopCart = useSelector((state) => state.cart.shopCart);
+  const shopCatagories = useSelector((item) => item.shop.shopCatagories);
+
+  const Dispatch = useDispatch();
+
   let cartitems = 0;
-  // for (let items of userfoodCart) {
-  //   cartitems += items.quant;
-  // }
+  for (let items of usershopCart) {
+    cartitems += items.quant;
+  }
   // const showModel = useSelector((state) => state.cart.showModel);
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
@@ -35,17 +39,17 @@ const Products = () => {
     };
     myFoodData();
   }, []);
-  // myFood.length > 0 && Dispatch(cartActions.apidata(myFood));
+  
+  myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
 
   return (
     <section className="section">
       <FlexRow className="primaryflexContainer">
         <ProductCatagories />
-        {/* <h1>Restaurants </h1> */}
       </FlexRow>
       {/* <Container>{showModel && <CartModel />}</Container> */}
       <Container className="coursecontainer">
-        <ProductsDetails myFood={myFood} />
+        <ProductsDetails myFood={shopCatagories} />
       </Container>
 
       <Container className="coursecontainer"></Container>

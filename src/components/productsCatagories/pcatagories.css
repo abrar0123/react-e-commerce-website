@@ -1,9 +1,9 @@
 .productcatagoriesCard {
-  background-color: white;
-  width: 180px;
+  background: white;
+  width: 150px;
   padding-right: 10px;
-  box-shadow: 1px 1px 10px rgb(11, 11, 11, 0.4);
-  border-radius: 3px;
+  box-shadow: 2px 2px 10px rgb(11, 11, 11, 0.5);
+  border-radius: 7px;
   padding: 5px;
   /* color: honeydew; */
 }
@@ -30,4 +30,5 @@
 .productcatagoriesCard p {
   font-size: 16px;
   font-weight: 500;
+  text-transform: capitalize;
 }

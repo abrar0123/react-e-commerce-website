@@ -4,24 +4,23 @@ import Card from "../../components/common/UI/Card/card";
 import Container from "../../components/common/UI/Card/Container";
 import FlexRow from "../../components/common/UI/Card/FlexRow";
 import Button from "../../components/common/UI/button/Button";
-// import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
-// import { cartActions } from "../../Redux/cartSlice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Redux/cartSlice";
 
 const ProductsDetails = ({ myFood }) => {
-  //   const foodCart = useSelector((state) => state.cart.foodCart);
+  const foodCart = useSelector((state) => state.cart.shopCart);
 
-  //   console.log("foodCart__", foodCart);
-  //   const Dispatch = useDispatch();
+  const Dispatch = useDispatch();
 
   const addToCartHandler = (id, title, url, price) => {
-    // Dispatch(
-    //   cartActions.addToCart({ id: id, title, url: url, quant: 1, price: price })
-    // );
+    Dispatch(
+      cartActions.addToCart({ id: id, title, url: url, quant: 1, price: price })
+    );
   };
 
   const removeToCartHandler = (id) => {
-    // Dispatch(cartActions.removeToCart({ id: id }));
+    Dispatch(cartActions.removeToCart({ id: id }));
   };
 
   return (
@@ -30,9 +29,8 @@ const ProductsDetails = ({ myFood }) => {
         myFood.map((item) => {
           const imageUrl = item.image;
           const price = item.price;
-          const foodCartitems = 10;
-
-          // foodCart && foodCart.find((e) => e.id === item.id);
+          const foodCartitems =
+            foodCart && foodCart.find((e) => e.id === item.id);
 
           return (
             <Card className="coursecCard">
@@ -51,6 +49,11 @@ const ProductsDetails = ({ myFood }) => {
                 </Container>
               </FlexRow>
               <Container className="titlecontainer">
+                <p style={{ fontWeight: "bold", textTransform: "capitalize" }}>
+                  Catagory: {item.category}
+                </p>
+              </Container>
+              <Container className="titlecontainer">
                 <FlexRow className="primaryflex1">
                   <Button
                     style={{
@@ -61,8 +64,8 @@ const ProductsDetails = ({ myFood }) => {
                   >
                     -
                   </Button>
-                  <p style={{ fontSize: "20px" }} className="p1">
-                    {/* {foodCartitems ? foodCartitems.quant : 0} */}0
+                  <p className="p1">
+                    {foodCartitems ? foodCartitems.quant : 0}
                   </p>
                   <Button
                     style={{

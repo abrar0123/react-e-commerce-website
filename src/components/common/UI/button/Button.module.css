@@ -9,7 +9,7 @@
 }
 
 .buttonstyle:not(:last-child) {
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 .buttonstyle:hover {
   cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 .primarybuttonstyle:not(:last-child) {
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 .primarybuttonstyle:hover {
   cursor: pointer;
