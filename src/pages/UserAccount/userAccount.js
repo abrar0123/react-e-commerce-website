@@ -3,6 +3,7 @@ import Header from "../../components/MainHeader/firstHeader/Header";
 import HeaderSection from "../../components/MainHeader/sectionHeader/headerSection";
 import Footer from "../../components/Layout/footer/footer";
 import Prefooter from "../../components/Layout/prefooter/prefooter";
+import Products from "../../components/Products/products";
 export default function userAccount() {
   return (
     // Card style={{ margin: "0px 20px" }}
@@ -10,6 +11,7 @@ export default function userAccount() {
       <Header />
       <HeaderSection />
       <Prefooter />
+      <Products />
       <Footer />
     </React.Fragment>
   );

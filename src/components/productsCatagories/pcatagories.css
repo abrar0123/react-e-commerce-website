@@ -1,0 +1,33 @@
+.productcatagoriesCard {
+  background-color: white;
+  width: 180px;
+  padding-right: 10px;
+  box-shadow: 1px 1px 10px rgb(11, 11, 11, 0.4);
+  border-radius: 3px;
+  padding: 5px;
+  /* color: honeydew; */
+}
+.productcatagoriesCard .imgContainer {
+  width: 100%;
+  padding: 5px 6px;
+  height: 90px;
+}
+
+.productcatagoriesCard .imgContainer img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+.productcatagoriesCard .imgContainer img:hover {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translate(-3px, -1px);
+}
+.productcatagoriesCard .imgContainer img:active {
+  transform: translate(0px, 0px);
+}
+.productcatagoriesCard p {
+  font-size: 16px;
+  font-weight: 500;
+}

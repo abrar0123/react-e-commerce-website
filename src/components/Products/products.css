@@ -1,0 +1,135 @@
+.section {
+  padding: 20px 180px;
+  /* background: linear-gradient(to right, red, rgb(95, 6, 100)); */
+}
+.section .primaryflexContainer {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+}
+.section h1 {
+  color: black;
+  /* text-align: center; */
+  font-size: 40px;
+}
+
+.coursecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.coursecCard {
+  width: 290px;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgb(11, 11, 11, 0.25);
+}
+
+.coursecCard .imgContainer {
+  /* width: 100%; */
+  padding: 5px 6px;
+  height: 200px;
+}
+
+.coursecCard .imgContainer img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.flexContainer h3 {
+  color: black;
+}
+.titlecontainer {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.coursecCard .titlecontainer h2 {
+  display: inline;
+  font-size: 20px;
+  width: 100%;
+  margin-right: 20px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 5px;
+  color: black;
+}
+.coursecCard .titlecontainer p {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+.coursecCard .titlecontainer button,
+.p1 {
+  border: none;
+  padding: 7px 25px;
+
+  background-color: rgb(14, 14, 186);
+  border-radius: 1px 1px 10px black;
+  font-size: 20px;
+}
+
+.coursecCard .titlecontainer button:hover {
+  cursor: pointer;
+  transition: all 1s ease;
+  background-color: rgb(8, 8, 73);
+}
+.coursecCard .titlecontainer button:active {
+  background-color: rgb(14, 14, 186);
+}
+.coursecCard .primaryflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.coursecCard .primaryflex1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* search bar */
+.courseSearch {
+  width: 300px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+
+  border-radius: 25px;
+  border: 2px solid white;
+}
+
+.courseSearch input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+  background-color: transparent;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  border: none;
+}
+.courseSearch input[type="text"]:focus {
+  outline: none;
+}
+.courseSearch input[type="text"]::placeholder {
+  color: rgb(222, 215, 215);
+}
