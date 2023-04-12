@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import persistReducer from "redux-persist/es/persistReducer";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -6,7 +8,6 @@ const cartSlice = createSlice({
     shopCart: [],
     cartItems: 0,
     showModel: false,
-    searchedProducts: [],
   },
   reducers: {
     addToCart: (state, action) => {
@@ -18,7 +19,7 @@ const cartSlice = createSlice({
       } else {
         state.shopCart[findIndex].quant < 10 &&
           state.shopCart[findIndex].quant++;
-         state.shopCart[findIndex].subtotal =
+        state.shopCart[findIndex].subtotal =
           state.shopCart[findIndex].price * state.shopCart[findIndex].quant;
         state.cartItems++;
       }
@@ -51,14 +52,18 @@ const cartSlice = createSlice({
       const model = action.payload.data;
       state.showModel = model;
     },
-
-    searchProduct: (state, action) => {
-      const newProducts = action.payload;
-      state.searchedProducts = newProducts;
-    },
   },
 });
+const persistConfig = {
+  key: "root",
+  storage: AsyncStorage,
+};
 
-export const cartReducer = cartSlice.reducer;
+export const persistcartReducer = persistReducer(
+  persistConfig,
+  cartSlice.reducer
+);
+
+// export const cartReducer = cartSlice.reducer;
 
 export const cartActions = cartSlice.actions;
