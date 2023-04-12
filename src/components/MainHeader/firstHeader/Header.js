@@ -4,6 +4,7 @@ import Logo1 from "../../../assets/Icons/logo4.png";
 import { IoIosSearch, IoIosCart, IoIosHeartEmpty } from "react-icons/io";
 import Card from "../../common/UI/Card/card";
 import Container from "../../common/UI/Card/Container";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -12,13 +13,16 @@ export default function Header() {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/Products">Products</Link>
             </li>
             <li>
-              <a href="#">Catagories</a>
+              <Link to="/categories">categories</Link>
+            </li>
+            <li>
+              <Link to="/Cart">Cart</Link>
             </li>
           </ul>
         </nav>

@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
 
-const ProductsDetails = ({ myFood }) => {
-  const foodCart = useSelector((state) => state.cart.shopCart);
+const ProductsDetails = ({ shopCatagories }) => {
+  const shopCart = useSelector((state) => state.cart.shopCart);
 
   const Dispatch = useDispatch();
 
@@ -25,12 +25,12 @@ const ProductsDetails = ({ myFood }) => {
 
   return (
     <React.Fragment>
-      {myFood &&
-        myFood.map((item) => {
+      { shopCatagories &&
+        shopCatagories.map((item) => {
           const imageUrl = item.image;
           const price = item.price;
           const foodCartitems =
-            foodCart && foodCart.find((e) => e.id === item.id);
+          shopCart && shopCart.find((e) => e.id === item.id);
 
           return (
             <Card className="coursecCard">

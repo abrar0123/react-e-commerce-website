@@ -16,10 +16,10 @@ const cartSlice = createSlice({
         state.shopCart.push(newProduct);
         state.cartItems++;
       } else {
-        state.shopCart[findIndex].quant++;
-        state.shopCart[findIndex].subtotal =
+        state.shopCart[findIndex].quant < 10 &&
+          state.shopCart[findIndex].quant++;
+         state.shopCart[findIndex].subtotal =
           state.shopCart[findIndex].price * state.shopCart[findIndex].quant;
-
         state.cartItems++;
       }
     },

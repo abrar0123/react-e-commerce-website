@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./products.css";
-import Card from "../../components/common/UI/Card/card";
-import Container from "../../components/common/UI/Card/Container";
-import FlexRow from "../../components/common/UI/Card/FlexRow";
+
+import Container from "../common/UI/Card/Container";
+import FlexRow from "../common/UI/Card/FlexRow";
 import ProductCatagories from "../productsCatagories/productCatagories";
 import { useSelector } from "react-redux";
-// import CartModel from "../CartModel/CartModel";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
 import ProductsDetails from "./productsDetails";
 import { shopActions } from "../../Redux/shopapiSlice";
 
-const Products = () => {
-  const [myFood, setmyFood] = useState([]);
+const Productscatdisplay = () => {
+  const [myFood, setmyFood] = useState("");
   const usershopCart = useSelector((state) => state.cart.shopCart);
-  // const shopCatagories = useSelector((item) => item.shop.shopCatagories);
+  const shopCatagories = useSelector((item) => item.shop.shopCatagories);
 
   const Dispatch = useDispatch();
 
@@ -22,7 +21,6 @@ const Products = () => {
   for (let items of usershopCart) {
     cartitems += items.quant;
   }
-  // const showModel = useSelector((state) => state.cart.showModel);
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const Products = () => {
   return (
     <section className="section">
       <FlexRow className="primaryflexContainer">
-        {/* <ProductCatagories /> */}
+        <ProductCatagories />
       </FlexRow>
       <Container style={{ marginBottom: "35px" }}>
         <h2
@@ -58,13 +56,13 @@ const Products = () => {
             paddingBottom: "6px",
           }}
         >
-          {cat}
+          {shopCatagories.length > 0 && shopCatagories.length < 10
+            ? shopCatagories[0].category
+            : cat}
         </h2>
       </Container>
-      {/* <Container>{showModel && <CartModel />}</Container> */}
       <Container className="coursecontainer">
-        {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
-        <ProductsDetails shopCatagories={myFood} />
+        <ProductsDetails shopCatagories={shopCatagories} />
       </Container>
 
       <Container className="coursecontainer"></Container>
@@ -72,4 +70,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Productscatdisplay;
