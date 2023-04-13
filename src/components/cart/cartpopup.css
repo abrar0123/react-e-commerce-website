@@ -10,7 +10,9 @@
 }
 
 .cartpop .cardpop {
-  background-color: rgb(235, 110, 110);
+  margin-bottom: 2px;
+
+  background-color: rgb(96, 93, 97);
 }
 
 .cartpop .imgcontainer {
