@@ -50,11 +50,14 @@ header .headercontainer h1:hover {
   padding: 5px 10px;
 }
 .headercontainer nav ul li a:hover {
-  color: rgb(169, 110, 232);
+  /* color: rgb(169, 110, 232); */
   transition: all 0.3s ease;
+  opacity: 0.8;
+
 }
 .headercontainer nav ul li a:active {
   /* background-color: rgb(197, 210, 222); */
-  color: rgb(123, 12, 241);
+  opacity: 0.5;
+  /* color: rgb(123, 12, 241); */
   transform: translate(-2px, -1px);
 }

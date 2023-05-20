@@ -12,8 +12,9 @@ export default function userAccount() {
     // Card style={{ margin: "0px 20px" }}
     <React.Fragment>
       <Header />
+      {/* <HeaderSection /> */}
+      {/* <Products /> */}
       <Routes>
-        {/* <HeaderSection /> */}
         <Route path="/" Component={HeaderSection} />
         <Route path="/Products" Component={Products} />
         <Route path="/categories" Component={catagories} />

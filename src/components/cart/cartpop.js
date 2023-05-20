@@ -5,10 +5,8 @@ import Button from "../common/UI/button/Button";
 import FlexRow from "../common/UI/Card/FlexRow";
 import { useSelector } from "react-redux";
 import Container from "../common/UI/Card/Container";
-import FlexColumn from "../common/UI/Card/FlexColumn";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
-import Card from "../common/UI/Card/card";
 import { IoIosClose } from "react-icons/io";
 
 const Cartpop = ({ onClose }) => {

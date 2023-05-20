@@ -10,9 +10,11 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
 import ProductsDetails from "./productsDetails";
 import { shopActions } from "../../Redux/shopapiSlice";
+import { ScaleLoader } from "react-spinners";
 
 const Products = () => {
   const [myFood, setmyFood] = useState([]);
+  const [isLoader, setisLoader] = useState(false);
   const usershopCart = useSelector((state) => state.cart.shopCart);
   // const shopCatagories = useSelector((item) => item.shop.shopCatagories);
 
@@ -28,11 +30,13 @@ const Products = () => {
   useEffect(() => {
     const myFoodData = async () => {
       try {
+        setisLoader(true);
         const res = await fetch("https://fakestoreapi.com/products/");
 
         const data = await res.json();
         setmyFood(data);
         // console.log("Apidata__", data.categories);
+        setisLoader(false);
       } catch (error) {
         console.log("Api Data Error ", error);
       }
@@ -60,12 +64,15 @@ const Products = () => {
         >
           {cat}
         </h2>
+        {isLoader && (
+          <div style={{ paddingLeft: "350px" }}>
+            <ScaleLoader size={35} color="blue" />
+          </div>
+        )}
       </Container>
       {/* <Container>{showModel && <CartModel />}</Container> */}
-      <Container className="coursecontainer">
-        {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
-        <ProductsDetails shopCatagories={myFood} />
-      </Container>
+      {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
+      <ProductsDetails shopCatagories={myFood} />
 
       <Container className="coursecontainer"></Container>
     </section>

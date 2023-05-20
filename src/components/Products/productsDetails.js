@@ -24,13 +24,13 @@ const ProductsDetails = ({ shopCatagories }) => {
   };
 
   return (
-    <React.Fragment>
-      { shopCatagories &&
+    <Card className="coursecontainer">
+      {shopCatagories &&
         shopCatagories.map((item) => {
           const imageUrl = item.image;
           const price = item.price;
           const foodCartitems =
-          shopCart && shopCart.find((e) => e.id === item.id);
+            shopCart && shopCart.find((e) => e.id === item.id);
 
           return (
             <Card className="coursecCard">
@@ -87,7 +87,7 @@ const ProductsDetails = ({ shopCatagories }) => {
             </Card>
           );
         })}
-    </React.Fragment>
+    </Card>
   );
 };
 

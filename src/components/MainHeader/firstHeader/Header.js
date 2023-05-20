@@ -27,6 +27,10 @@ export default function Header() {
     <>
       <header>
         <Card className="headercontainer">
+          <Container>
+            <h1>Sephora Store</h1>
+          </Container>
+
           <nav>
             <ul>
               <li>
@@ -41,9 +45,6 @@ export default function Header() {
               {/* <Button onClick={handleCartOpen}></Button> */}
             </ul>
           </nav>
-          <Container>
-            <h1>Sephora Store</h1>
-          </Container>
 
           <nav>
             <ul>
@@ -85,7 +86,7 @@ export default function Header() {
           </nav>
         </Card>
       </header>
-      {cartOpen && <CartPopup onClose={handleCartClose} />}
+      {/* {cartOpen && <CartPopup onClose={handleCartClose} />} */}
     </>
   );
 }

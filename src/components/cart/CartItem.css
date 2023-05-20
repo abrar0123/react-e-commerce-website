@@ -1,26 +1,50 @@
-.cartItem {
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 15px;
+.cartItemMain {
+  padding: 50px 100px;
   display: flex;
-  justify-content: flex-start;
-  position: relative;
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.removeCartItem {
-  position: absolute;
+.cartItem {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
 
-  top: 15px;
-  right: 15px;
-  color: gray;
+  justify-content: space-between;
+  border-radius: 3px;
+  /* overflow: hidden; */
+  padding: 30px 70px;
+  position: relative;
+  /* margin-bottom: 20px; */
+  box-shadow: 2px 3px 10px rgb(219, 217, 217);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.spacea {
+  justify-content: space-around;
+}
+.space {
+  justify-content: space-between;
+}
+
+.crossicon {
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+  padding: 3px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
   cursor: pointer;
 }
 
 .cartItemImg {
-  width: 200px;
-  height: 150px !important;
-  margin-right: 40px;
+  width: 120px;
+  height: 120px !important;
+  /* margin-right: 40px; */
 }
 
 .cartItemImg img {
@@ -33,9 +57,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  gap: 5px;
 }
-
+.cartItemHeading {
+  /* background-color: rgb(97, 54, 54); */
+  width: 400px;
+}
+@media screen and (max-width: 760px) {
+  .cartItemHeading {
+    width: 100%;
+  }
+}
 .cartItemInfo {
   display: flex;
   gap: 20px;
@@ -46,8 +79,9 @@
 }
 
 .cartItemPrice {
-  color: #d23f57;
+  color: #810d20;
   font-weight: 500;
+  font-size: 20px;
 }
 
 .cartItemCounter {
@@ -66,4 +100,46 @@
   align-items: center;
   color: #d23f57;
   cursor: pointer;
+}
+
+/*  total styling  */
+
+.totalHeading {
+  margin: 30px 0;
+}
+
+.totalHeading h3 {
+  text-align: right;
+  font-size: 35px;
+  color: #d23f57;
+}
+
+.hrstyle {
+  margin-bottom: 20px;
+}
+
+.buttonstyle button {
+  border: none;
+  padding: 20px 130px;
+  margin: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.buttonstyle .button1 {
+  background: #000;
+  color: white;
+}
+.buttonstyle .button2 {
+  color: white;
+
+  background: red;
+}
+.buttonstyle button:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+.buttonstyle button:active {
+  opacity: 0.6;
 }
