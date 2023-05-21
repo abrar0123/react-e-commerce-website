@@ -28,54 +28,50 @@ export default function Header() {
       <header>
         <Card className="headercontainer">
           <Container>
-            <h1>Sephora Store</h1>
+            <h1>
+              <Link to="/">JDK Store</Link>
+            </h1>
           </Container>
 
-          <nav>
-            <ul>
-              <li>
+          <Card className="navBar">
+            <ul className="navList flex spaceb">
+              <li className="navItem">
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className="navItem">
                 <Link to="/Products">Products</Link>
               </li>
-              <li>
+              <li className="navItem">
                 <Link to="/categories">categories</Link>
               </li>
-              {/* <Button onClick={handleCartOpen}></Button> */}
             </ul>
-          </nav>
+          </Card>
 
           <nav>
             <ul>
-              {/* course */}
-              <li>
-                <a href="#">
-                  <IoIosSearch color="white" size={25} />
-                </a>
-              </li>
               <li>
                 <a href="#">
                   <IoIosHeartEmpty
-                    color="white"
+                    color="black"
                     size={25}
-                    onClick={handleCartOpen}
+                    // onClick={handleCartOpen}
                   />
                 </a>
               </li>
               <li>
-                {/* <a href="#">
-              </a> */}
                 <Link to="/Cart">
-                  <IoIosCart color="white" size={25} />
+                  <IoIosCart color="black" size={25} className="iconstyle" />
                   <span
                     style={{
                       background: "tomato",
-                      borderRadius: "50px",
-                      padding: "0px 5px",
+                      color: "white",
+                      borderRadius: "25px",
+                      padding: "2px 5px",
+                      fontSize: "12px",
                       position: "relative",
-                      bottom: "10px",
-                      // right: "10px",
+                      bottom: "18px",
+
+                      right: "2px",
                     }}
                   >
                     {cart}

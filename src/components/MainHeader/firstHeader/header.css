@@ -3,36 +3,81 @@
 }
 
 header {
-  background-color: rgb(13, 13, 14);
+  /* background-color: rgb(13, 13, 14); */
+  color: black;
   padding: 30px 0px;
   /* position: fixed; */
   /* width: 100%; */
   box-sizing: border-box;
-  /* border-bottom: 5px solid red; */
   z-index: 1;
+  border-bottom: 1px solid rgba(207, 203, 203, 0.701);
+  margin: 0 50px;
 }
 
 .headercontainer {
   margin: 0 auto;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header .headercontainer h1 {
-  color: white;
   margin: 0px;
   font-weight: 600;
 }
-
+header .headercontainer h1 a {
+  text-decoration: none;
+}
+header .headercontainer h1 a:active {
+  color: rgb(71, 9, 84);
+}
 header .headercontainer h1:hover {
+  cursor: pointer;
+}
+header .headercontainer h1:active {
   transform: translate(-2px, -1px);
   cursor: pointer;
 }
 
+.navBar {
+}
+.navBar .navList {
+  list-style: none;
+  margin: 0px;
+  gap: 0px 40px;
+}
+.navBar .navList .navItem {
+  /* margin-right: 30px; */
+  /* margin: 0px; */
+  padding: 0px;
+}
+.navBar .navList .navItem a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.navBar .navList .navItem a:hover {
+  color: rgb(142, 42, 165);
+}
+.navBar .navList .navItem a:active {
+  opacity: 0.7;
+}
 .headercontainer nav ul {
   list-style: none;
   margin: 0px;
+}
+
+/* reuseable styles */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.spaceb {
+  justify-content: space-between;
 }
 
 .headercontainer nav ul li {
@@ -43,21 +88,28 @@ header .headercontainer h1:hover {
 }
 
 .headercontainer nav ul li a {
-  color: white;
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
   padding: 5px 10px;
 }
 .headercontainer nav ul li a:hover {
-  /* color: rgb(169, 110, 232); */
-  transition: all 0.3s ease;
-  opacity: 0.8;
-
+  color: rgb(169, 110, 232);
+  /* opacity: 0.8; */
 }
+
 .headercontainer nav ul li a:active {
   /* background-color: rgb(197, 210, 222); */
-  opacity: 0.5;
+  opacity: 0.7;
   /* color: rgb(123, 12, 241); */
   transform: translate(-2px, -1px);
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    position: relative;
+  }
+  .navBar .navList {
+    display: none;
+  }
 }
