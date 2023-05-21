@@ -14,38 +14,27 @@ import Button from "../../common/UI/button/Button";
 export default function prefooter() {
   return (
     <section className="prefooter">
-      <FlexColumn
-        style={{
-          height: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h3>News Letter</h3>
-        <h1>Signup for Latest Offers and Updates </h1>
-        <Container style={{ margin: "15px 0px " }}>
+      <div className="mainContainer">
+        <h1>Get Latest Offers and Updates </h1>
+        <p className="text">Signup to Enjoy world'd best products</p>
+
+        <div className="buttoninput">
           <input
             type="text"
             name="text"
             id="text"
             placeholder="Email Address"
           />
-          <Button>Subscribe </Button>
-        </Container>
-        <p>will be used in accordance with our privacy policy </p>
-        <FlexRow
-          style={{
-            margin: "10px 0px",
-            width: "150px",
-            justifyContent: "space-between",
-          }}
-        >
-          <AiOutlineFacebook color="blue" size={25} />
-          <AiOutlineTwitter color="blue" size={25} />
-          <AiOutlineLinkedin color="blue" size={25} />
-          <AiOutlineInstagram color="blue" size={25} />
-        </FlexRow>
-      </FlexColumn>
+          <Button style={{ padding: "13px 20px" }}>Subscribe </Button>
+        </div>
+
+        <div className="iconsstyle flex spacea">
+          <AiOutlineFacebook color="orange" size={35} />
+          <AiOutlineTwitter color="orange" size={35} />
+          <AiOutlineLinkedin color="orange" size={35} />
+          <AiOutlineInstagram color="orange" size={35} />
+        </div>
+      </div>
     </section>
   );
 }

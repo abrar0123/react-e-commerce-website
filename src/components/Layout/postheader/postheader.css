@@ -1,0 +1,36 @@
+.sectionpost {
+  /* height: 70px; */
+  padding: 13px 0px;
+  background-color: rgb(237, 113, 11);
+}
+.sectionpost .text1 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+.inputdetils {
+  background-color: white;
+  border-radius: 3px;
+  /* padding: 1px 15px; */
+  /* border: 1px solid black; */
+  /* padding: 8px 10px; */
+  /* box-shadow: 2px 2px 10px rgb(6, 5, 5, 0.5); */
+}
+.inputdetils input[type="text"] {
+  /* height: 28px; */
+  outline: none;
+  padding: 9px 20px;
+  border: none;
+  /* background-color: rgb(209, 28, 28); */
+  margin-left: 1px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.flex1 {
+  display: flex;
+  /* background-color: rgb(205, 94, 25); */
+  align-items: center;
+}
+.spacea {
+  justify-content: space-around;
+}

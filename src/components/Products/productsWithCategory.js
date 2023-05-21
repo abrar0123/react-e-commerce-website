@@ -43,7 +43,7 @@ const Productscatdisplay = () => {
   }, []);
 
   myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
-  const cat = "Popular Products";
+  const cat = "ALL Products";
 
   return (
     <section className="section">
@@ -74,7 +74,6 @@ const Productscatdisplay = () => {
         <ProductsDetails shopCatagories={shopCatagories} />
       </Container>
 
-      <Container className="coursecontainer"></Container>
     </section>
   );
 };

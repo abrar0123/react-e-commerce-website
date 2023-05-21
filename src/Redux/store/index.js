@@ -10,7 +10,9 @@ const rootReducer = combineReducers({
   auth: authReducer,
   shop: shopFilterReducer,
 });
+
 export const store = configureStore({
   reducer: rootReducer,
 });
+
 export const persiststore = persistStore(store);

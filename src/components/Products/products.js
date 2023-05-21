@@ -44,6 +44,7 @@ const Products = () => {
     myFoodData();
   }, []);
 
+  
   myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
   const cat = "Popular Products";
 

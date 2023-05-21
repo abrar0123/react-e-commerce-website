@@ -7,16 +7,21 @@ import Products from "../../components/Products/products";
 import { Route, Routes } from "react-router-dom";
 import catagories from "../catagories/catagories";
 import Cart from "../../pages/Cart/cart";
+import Postheader from "../../components/Layout/postheader/postheader";
+import SeparateProduct from "../../components/Products/separateProduct";
+
 export default function userAccount() {
   return (
-    // Card style={{ margin: "0px 20px" }}
     <React.Fragment>
       <Header />
+      <Postheader />
       {/* <HeaderSection /> */}
       {/* <Products /> */}
       <Routes>
         <Route path="/" Component={HeaderSection} />
         <Route path="/Products" Component={Products} />
+        <Route path="/Products/:pid" Component={SeparateProduct} />
+
         <Route path="/categories" Component={catagories} />
         <Route path="/Cart" Component={Cart} />
       </Routes>

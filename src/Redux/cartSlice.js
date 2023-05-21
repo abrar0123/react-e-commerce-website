@@ -12,10 +12,11 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       const newProduct = action.payload;
+      console.log("newProduct__", newProduct);
       let findIndex = state.shopCart.findIndex((e) => e.id === newProduct.id);
       if (findIndex === -1) {
         state.shopCart.push(newProduct);
-        state.cartItems++;
+        state.cartItems++; // another var
       } else {
         state.shopCart[findIndex].quant < 10 &&
           state.shopCart[findIndex].quant++;
@@ -29,11 +30,11 @@ const cartSlice = createSlice({
       const newProduct = action.payload;
       let findIndex = state.shopCart.findIndex((e) => e.id === newProduct.id);
       if (findIndex !== -1) {
-        if (state.shopCart[findIndex].quant > 0) {
+        if (state.shopCart[findIndex].quant > 1) {
           state.shopCart[findIndex].quant--;
           state.shopCart[findIndex].subtotal =
             state.shopCart[findIndex].price * state.shopCart[findIndex].quant;
-          state.cartItems--;
+           state.cartItems--;
         }
       }
     },
@@ -48,7 +49,6 @@ const cartSlice = createSlice({
 
     cartModel: (state, action) => {
       console.log("click handler");
-
       const model = action.payload.data;
       state.showModel = model;
     },

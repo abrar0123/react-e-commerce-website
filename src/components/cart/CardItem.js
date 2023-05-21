@@ -80,7 +80,7 @@ export default function CardItem() {
               <div className="cartItemDetails">
                 {/* <h3 className="cartItemHeading">Price</h3> */}
                 <div className="cartItemPrice">
-                  US${item?.subtotal?.toFixed(2)}
+                  US${item.subtotal ? item.subtotal.toFixed(2) : item.price}
                 </div>
               </div>
             </Card>
@@ -92,7 +92,7 @@ export default function CardItem() {
           <span style={{ fontWeight: "400", fontSize: "23px" }}>
             Total Bill :{"     \t"}
           </span>{" "}
-          ${myTotal}
+          ${myTotal.toFixed(2)}
         </h3>
       </div>
       <div className="hrstyle">

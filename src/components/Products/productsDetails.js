@@ -7,6 +7,7 @@ import Button from "../../components/common/UI/button/Button";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
+import { Link } from "react-router-dom";
 
 const ProductsDetails = ({ shopCatagories }) => {
   const shopCart = useSelector((state) => state.cart.shopCart);
@@ -15,7 +16,14 @@ const ProductsDetails = ({ shopCatagories }) => {
 
   const addToCartHandler = (id, title, url, price) => {
     Dispatch(
-      cartActions.addToCart({ id: id, title, url: url, quant: 1, price: price })
+      cartActions.addToCart({
+        id: id,
+        title,
+        url: url,
+        quant: 1,
+        price: price,
+        subtotal: price * 1,
+      })
     );
   };
 
@@ -33,10 +41,13 @@ const ProductsDetails = ({ shopCatagories }) => {
             shopCart && shopCart.find((e) => e.id === item.id);
 
           return (
-            <Card className="coursecCard">
-              <Container className="imgContainer">
-                <img src={imageUrl} alt="pic" />
-              </Container>
+            <div className="coursecCard">
+              <Link to={`/Products/${item.id}`}>
+                <Container className="imgContainer">
+                  <img src={imageUrl} alt="pic" />
+                </Container>
+              </Link>
+
               <Container className="titlecontainer">
                 <h2>{item.title}</h2>
               </Container>
@@ -84,7 +95,7 @@ const ProductsDetails = ({ shopCatagories }) => {
                   </Button>
                 </FlexRow>
               </Container>
-            </Card>
+            </div>
           );
         })}
     </Card>
