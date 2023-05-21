@@ -55,6 +55,12 @@
   border: 2px solid black;
   box-sizing: border-box;
 }
+.buttonstyle .button1 a {
+  color: white;
+  background-color: #fff;
+  width: 100%;
+  text-decoration: none;
+}
 .btnstyle .button2 {
   background-color: rgb(233, 29, 29);
   color: white;

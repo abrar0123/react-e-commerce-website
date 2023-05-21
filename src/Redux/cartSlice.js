@@ -8,6 +8,7 @@ const cartSlice = createSlice({
     shopCart: [],
     cartItems: 0,
     showModel: false,
+    orderData: [],
   },
   reducers: {
     addToCart: (state, action) => {
@@ -34,7 +35,7 @@ const cartSlice = createSlice({
           state.shopCart[findIndex].quant--;
           state.shopCart[findIndex].subtotal =
             state.shopCart[findIndex].price * state.shopCart[findIndex].quant;
-           state.cartItems--;
+          state.cartItems--;
         }
       }
     },
@@ -51,6 +52,15 @@ const cartSlice = createSlice({
       console.log("click handler");
       const model = action.payload.data;
       state.showModel = model;
+    },
+    placeorder: (state, action) => {
+      const newProducts = action.payload;
+      state.shopCart = [];
+      state.orderData = newProducts;
+    },
+    deleteplaceorder: (state, action) => {
+      // const newProducts = action.payload;
+      state.orderData = [];
     },
   },
 });

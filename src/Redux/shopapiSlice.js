@@ -20,6 +20,7 @@ const shopFilter = createSlice({
       const newProducts = action.payload;
       state.searchedProducts = newProducts;
     },
+ 
   },
 });
 export const shopFilterReducer = shopFilter.reducer;

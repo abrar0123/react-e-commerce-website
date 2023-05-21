@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { cartActions } from "../../Redux/cartSlice";
 import { useDispatch } from "react-redux";
 import Container from "../common/UI/Card/Container";
+import { Link } from "react-router-dom";
 
 export default function CardItem() {
   const shopCart = useSelector((state) => state.cart.shopCart);
@@ -99,9 +100,13 @@ export default function CardItem() {
         <hr style={{ fontWeight: "bold" }} />
       </div>
       <div className="buttonstyle flex spacea">
-        <button className="button1">Continue to Shopping</button>
+        <div className="button1">
+          <Link to={"/Alreadyorder"}>Check Already Order</Link>
+        </div>
 
-        <button className="button2">checkout</button>
+        <div className="button2">
+          <Link to={"/delivery"}>checkout</Link>
+        </div>
       </div>
     </div>
   );

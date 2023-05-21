@@ -1,0 +1,85 @@
+.delivery {
+  padding: 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+.deliveryCard {
+  width: 400px;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(119, 113, 113, 0.45);
+  padding: 10px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+  /* text-decoration:; */
+}
+
+.deliveryCard .deliveryInput1 {
+  background-color: white;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid rgb(219, 216, 216);
+  padding: 8px 3px;
+  /* box-shadow: 2px 2px 10px rgb(6, 5, 5, 0.15); */
+}
+.deliveryInput1 input[type="text"] {
+  /* height: 28px; */
+  outline: none;
+  padding: 9px 10px;
+  border: none;
+  /* background-color: rgb(209, 28, 28); */
+  margin-left: 1px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.deliveryCard .btnstyle {
+  /* padding: 12px; */
+  /* background-color: red; */
+  margin: 15px 0px;
+}
+.deliveryCard .btnstyle a {
+  color: white;
+  /* width: 100%; */
+  padding: 14px 128px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: red;
+}
+
+.deliveryCard .btnstyle a:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgb(10, 10, 10, 0.35);
+  transition: all 0.3s;
+  /* opacity: 0.8; */
+}
+.deliveryCard .btnstyle a:active {
+  opacity: 0.6;
+}
+
+.alraedyplacedbtn {
+  width: 100%;
+  margin: 15px 0px;
+}
+.alraedyplacedbtn a {
+  color: white;
+  /* width: 100%; */
+  padding: 14px 88px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: red;
+}
+.alraedyplacedbtn a:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgb(10, 10, 10, 0.35);
+  transition: all 0.3s;
+  /* opacity: 0.8; */
+}
+.alraedyplacedbtn a:active {
+  opacity: 0.6;
+}
