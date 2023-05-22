@@ -17,14 +17,14 @@ import { ScaleLoader } from "react-spinners";
 // import { fetchProducts1 } from "../../Redux/shopapiSlice";
 import { fetchProducts } from "../../Redux/shopapiSlice";
 const Products = () => {
-  const [myFood, setmyFood] = useState([]);
+  // const [myFood, setmyFood] = useState([]);
   const [isLoader, setisLoader] = useState(false);
   const usershopCart = useSelector((state) => state.cart.shopCart);
-  const apiint = useSelector((state) => state.shop.data);
-  const error = useSelector((state) => state.shop.error);
+  const productData = useSelector((state) => state.shop.data);
+  const loading = useSelector((state) => state.shop.loading);
 
-  console.log("productData__", apiint);
-  console.log("productData__1", error);
+  console.log("productData__", productData);
+  console.log("productData__1", loading);
 
   // const shopCatagories = useSelector((item) => item.shop.shopCatagories);
 
@@ -41,24 +41,24 @@ const Products = () => {
   // const showModel = useSelector((state) => state.cart.showModel);
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
-  useEffect(() => {
-    const myFoodData = async () => {
-      try {
-        setisLoader(true);
-        const res = await fetch("https://fakestoreapi.com/products/");
+  // useEffect(() => {
+  //   const myFoodData = async () => {
+  //     try {
+  //       setisLoader(true);
+  //       const res = await fetch("https://fakestoreapi.com/products/");
 
-        const data = await res.json();
-        setmyFood(data);
-        // console.log("Apidata__", data.categories);
-        setisLoader(false);
-      } catch (error) {
-        console.log("Api Data Error ", error);
-      }
-    };
-    myFoodData();
-  }, []);
+  //       const data = await res.json();
+  //       setmyFood(data);
+  //       // console.log("Apidata__", data.categories);
+  //       setisLoader(false);
+  //     } catch (error) {
+  //       console.log("Api Data Error ", error);
+  //     }
+  //   };
+  //   myFoodData();
+  // }, []);
 
-  myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
+  productData.length > 0 && Dispatch(shopActions.shopapi(productData));
   const cat = "Popular Products";
 
   return (
@@ -78,7 +78,7 @@ const Products = () => {
         >
           {cat}
         </h2>
-        {isLoader && (
+        {loading && (
           <div style={{ paddingLeft: "350px" }}>
             <ScaleLoader size={35} color="blue" />
           </div>
@@ -86,7 +86,7 @@ const Products = () => {
       </Container>
       {/* <Container>{showModel && <CartModel />}</Container> */}
       {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
-      <ProductsDetails shopCatagories={myFood} />
+      <ProductsDetails shopCatagories={productData} />
 
       <Container className="coursecontainer"></Container>
     </section>
