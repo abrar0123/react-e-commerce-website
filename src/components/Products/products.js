@@ -11,14 +11,28 @@ import { cartActions } from "../../Redux/cartSlice";
 import ProductsDetails from "./productsDetails";
 import { shopActions } from "../../Redux/shopapiSlice";
 import { ScaleLoader } from "react-spinners";
-
+// import { fetchProducts } from "../../Redux/shopapiSlice";
+// import { productApi } from "../../Redux/apiIntegration/productsapi";
+// import { fetchProducts } from "../../Redux/apiIntegration/productsapi";
+// import { fetchProducts1 } from "../../Redux/shopapiSlice";
+import { fetchProducts } from "../../Redux/shopapiSlice";
 const Products = () => {
   const [myFood, setmyFood] = useState([]);
   const [isLoader, setisLoader] = useState(false);
   const usershopCart = useSelector((state) => state.cart.shopCart);
+  const apiint = useSelector((state) => state.shop.data);
+  const error = useSelector((state) => state.shop.error);
+
+  console.log("productData__", apiint);
+  console.log("productData__1", error);
+
   // const shopCatagories = useSelector((item) => item.shop.shopCatagories);
 
   const Dispatch = useDispatch();
+
+  useEffect(() => {
+    Dispatch(fetchProducts());
+  }, [Dispatch]);
 
   let cartitems = 0;
   for (let items of usershopCart) {
@@ -44,7 +58,6 @@ const Products = () => {
     myFoodData();
   }, []);
 
-  
   myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
   const cat = "Popular Products";
 
