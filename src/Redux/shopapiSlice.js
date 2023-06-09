@@ -22,6 +22,7 @@ const shopFilter = createSlice({
     loading: false,
     error: null,
   },
+  
   reducers: {
     shopapi: (state, action) => {
       const newProducts = action.payload;
@@ -36,6 +37,7 @@ const shopFilter = createSlice({
       state.searchedProducts = newProducts;
     },
   },
+  
   extraReducers: (builder) => {
     // Handle the fetchProducts async thunk
     builder

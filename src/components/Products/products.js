@@ -38,6 +38,7 @@ const Products = () => {
   for (let items of usershopCart) {
     cartitems += items.quant;
   }
+  
   // const showModel = useSelector((state) => state.cart.showModel);
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 

@@ -10,12 +10,15 @@ import { cartActions } from "../../Redux/cartSlice";
 import ProductsDetails from "./productsDetails";
 import { shopActions } from "../../Redux/shopapiSlice";
 import { ScaleLoader } from "react-spinners";
+import axios from "axios";
 
 const Productscatdisplay = () => {
   const [myFood, setmyFood] = useState("");
   const [isLoader, setisLoader] = useState(false);
   const usershopCart = useSelector((state) => state.cart.shopCart);
   const shopCatagories = useSelector((item) => item.shop.shopCatagories);
+
+  console.log("myFood__:", myFood);
 
   const Dispatch = useDispatch();
 
@@ -25,21 +28,32 @@ const Productscatdisplay = () => {
   }
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
+  const myFoodData = async () => {
+    try {
+      setisLoader(true);
+      const res = await fetch("https://fakestoreapi.com/products/");
+
+      const data = await res.json();
+      setmyFood(data);
+      // console.log("Apidata__", data.categories);
+      setisLoader(false);
+    } catch (error) {
+      console.log("Api Data Error ", error);
+    }
+  };
   useEffect(() => {
-    const myFoodData = async () => {
+    const myfoodAxios = async () => { 
       try {
         setisLoader(true);
-        const res = await fetch("https://fakestoreapi.com/products/");
-
-        const data = await res.json();
+        const response = await axios.get("https://fakestoreapi.com/products/");
+        const data = await response.data;
         setmyFood(data);
-        // console.log("Apidata__", data.categories);
         setisLoader(false);
       } catch (error) {
-        console.log("Api Data Error ", error);
+        console.log("err", error);
       }
     };
-    myFoodData();
+    myfoodAxios();
   }, []);
 
   myFood.length > 0 && Dispatch(shopActions.shopapi(myFood));
@@ -73,7 +87,6 @@ const Productscatdisplay = () => {
       <Container className="coursecontainer">
         <ProductsDetails shopCatagories={shopCatagories} />
       </Container>
-
     </section>
   );
 };

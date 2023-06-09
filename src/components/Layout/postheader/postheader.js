@@ -14,7 +14,7 @@ const Postheader = () => {
             color="grey"
             style={{ marginLeft: "10px" }}
           />
-          <input type="text" placeholder=" Search for products" />
+          <input type="text" placeholder="Search for products" />
           <Button style={{ padding: "10px 20px" }}>search </Button>
         </div>
       </div>
