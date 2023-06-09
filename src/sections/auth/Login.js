@@ -5,6 +5,7 @@ import "./style.css";
 import { useState, useEffect } from "react";
 import InputForm from "./Signup";
 import Signup from "./Signup";
+import { Firebase_ApiKey, api_Endpoints } from "../../firebaseConfige";
 
 export default function Login() {
   const [email, setEmail] = useState("abc@gmail.com");
@@ -52,13 +53,13 @@ export default function Login() {
       seterrorText({ pass: "password must required or valid..." });
       return;
     }
-    // FirebaseAuthLogin();
+    FirebaseAuthLogin();
   };
 
   const FirebaseAuthLogin = async () => {
     try {
       const response = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAjAo7Ms93bxXzhpFxyz-ozLofBrirTJBM",
+        `${api_Endpoints}/accounts:signInWithPassword?key=${Firebase_ApiKey}`,
         {
           method: "POST",
           body: JSON.stringify({
