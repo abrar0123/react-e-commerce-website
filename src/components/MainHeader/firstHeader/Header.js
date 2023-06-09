@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Button from "../../common/UI/button/Button";
 import CartPopup from "../../cart/cartpop";
+import Signup from "../../../sections/auth/Signup";
+
 export default function Header() {
   const shopCart = useSelector((state) => state.cart.shopCart);
 
@@ -43,6 +45,12 @@ export default function Header() {
               </li>
               <li className="navItem">
                 <Link to="/categories">categories</Link>
+              </li>
+              <li className="navItem">
+                <Link to="/categories">Login</Link>
+              </li>
+              <li className="navItem">
+                <Link to={"Signup"}>Signup</Link>
               </li>
             </ul>
           </Card>

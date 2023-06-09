@@ -11,6 +11,8 @@ import Postheader from "../../components/Layout/postheader/postheader";
 import SeparateProduct from "../../components/Products/separateProduct";
 import Delivery from "../delivery/delivery";
 import Alreadyorder from "../delivery/alreadyorder";
+import Signup from '../../sections/auth/Signup' 
+
 
 export default function userAccount() {
   return (
@@ -23,7 +25,7 @@ export default function userAccount() {
         <Route path="/" Component={HeaderSection} />
         <Route path="/Products" Component={Products} />
         <Route path="/Products/:pid" Component={SeparateProduct} />
-
+        <Route path="/Signup" Component={Signup} />
         <Route path="/categories" Component={catagories} />
         <Route path="/Cart" Component={Cart} />
         <Route path="/delivery" Component={Delivery} />

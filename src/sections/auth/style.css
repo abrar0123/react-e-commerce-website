@@ -1,0 +1,60 @@
+html {
+  font-size: 62.5%;
+}
+.signup{
+  padding: 2rem 35rem;
+}
+.login {
+  padding: 2rem 30rem;
+}
+.inputContainer {
+  /* margin: 10px; */
+  width: 100%;
+}
+
+.inputContainer .errorhander {
+  color: red;
+  font-size: small;
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+.headrerh1 {
+  margin-bottom: 25px;
+}
+.inputContainer input {
+  width: 80%;
+  height: 35px;
+
+  padding: 0px 10px;
+  color: black;
+  margin-bottom: 20px;
+
+  font-weight: 600;
+}
+
+button:disabled {
+  background-color: aliceblue;
+}
+.inputContainer input:focus {
+  outline: none;
+  border: 2px solid rgb(18, 210, 18);
+  border-radius: 2px;
+  background-color: transparent;
+}
+.inputContainer.ISblurred input {
+  outline: none;
+  border-radius: 2px;
+
+  background-color: rgb(209, 231, 241);
+}
+
+.inputContainer .btnContainer {
+  width: 85%;
+  height: 41px;
+  border: none;
+  background-color: rgb(203, 50, 50);
+}
+.inputContainer .btnContainer:active {
+  background-color: rgb(49, 4, 4);
+}

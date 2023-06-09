@@ -10,3 +10,6 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+
+export const Firebase_ApiKey = "AIzaSyBVHEfnQ-K5Z1z0UVRGcA_wetkP2JkEHTE";
+export const api_Endpoints ='https://identitytoolkit.googleapis.com/v1';
