@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+// its use to make connection 
+import {getFirestore} from '@firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBVHEfnQ-K5Z1z0UVRGcA_wetkP2JkEHTE",
@@ -10,6 +12,7 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
 export const Firebase_ApiKey = "AIzaSyBVHEfnQ-K5Z1z0UVRGcA_wetkP2JkEHTE";
 export const api_Endpoints ='https://identitytoolkit.googleapis.com/v1';

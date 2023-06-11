@@ -75,10 +75,13 @@ export default function Login() {
       const data = await response.json();
       if (data.error) {
         console.log("login_data__:", data.error.message);
-        seterrorText({ pass: data.error.message });
+
+        const errMessage = `Sorry, you enter ${data.error.message.toLowerCase()}`;
+
+        seterrorText({ pass: errMessage });
         return;
       }
-
+      alert("Successful Login",data);
       console.log("authsuccessfull__:", data);
 
       if (!response.ok) {

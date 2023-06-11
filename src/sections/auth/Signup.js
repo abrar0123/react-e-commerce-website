@@ -4,7 +4,8 @@ import Button from "../../components/common/UI/button/Button";
 import "./style.css";
 import { useState } from "react";
 import Login from "./Login";
-import { Firebase_ApiKey, api_Endpoints } from "../../firebaseConfige";
+import { Firebase_ApiKey, api_Endpoints, db } from "../../firebaseConfige";
+import { addDoc, collection } from "firebase/firestore";
 
 const InputForm = () => {
   const [username, setusername] = useState("");
@@ -66,6 +67,7 @@ const InputForm = () => {
       return;
     }
     firebaseSignup();
+    firStoreData();
   };
 
   const firebaseSignup = async () => {
@@ -97,6 +99,21 @@ const InputForm = () => {
       setPass("");
     } catch (error) {
       console.log("auth error Ocurs__:\n\n", error);
+    }
+  };
+
+  const mycollection = collection(db, "users");
+
+  const firStoreData = async () => {
+    try {
+      const data = await addDoc(mycollection, {
+        email: email,
+        password: pass,
+        username: username,
+      });
+      console.log(data);
+    } catch (error) {
+      console.log("err__", error);
     }
   };
 

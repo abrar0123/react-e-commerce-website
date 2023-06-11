@@ -1,0 +1,48 @@
+html {
+  font-size: 62.5%;
+}
+.user {
+  font-size: 1.8rem;
+  padding: 2rem 10rem;
+}
+.userItemMain {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.user .userItem {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+
+  justify-content: space-between;
+  border-radius: 3px;
+  /* overflow: hidden; */
+  padding: 3rem 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+  box-shadow: 2px 3px 10px rgb(219, 217, 217);
+}
+.user .userItem h2 {
+  display: inline;
+  /* margin: 0rem auto; */
+}
+
+table {
+  width: 100%;
+  background-color: white;
+  box-shadow: 2px 3px 10px rgb(219, 217, 217);
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+}
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #d6eeee;
+}

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import StarRatings from "react-star-ratings";
 import { cartActions } from "../../Redux/cartSlice";
+import Postheader from "../Layout/postheader/postheader";
 
 const SeparateProduct = () => {
   const shopapi = useSelector((state) => state.shop.shopapi);
@@ -43,6 +44,7 @@ const SeparateProduct = () => {
 
   return (
     <div>
+    
       <div className="separateproduct">
         <div className="myimgContaineer">
           <img src={myProduct.image} alt="" />

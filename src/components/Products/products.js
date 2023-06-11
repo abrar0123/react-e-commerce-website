@@ -16,6 +16,7 @@ import { ScaleLoader } from "react-spinners";
 // import { fetchProducts } from "../../Redux/apiIntegration/productsapi";
 // import { fetchProducts1 } from "../../Redux/shopapiSlice";
 import { fetchProducts } from "../../Redux/shopapiSlice";
+import Postheader from "../Layout/postheader/postheader";
 const Products = () => {
   // const [myFood, setmyFood] = useState([]);
   const [isLoader, setisLoader] = useState(false);
@@ -38,7 +39,7 @@ const Products = () => {
   for (let items of usershopCart) {
     cartitems += items.quant;
   }
-  
+
   // const showModel = useSelector((state) => state.cart.showModel);
   // const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
@@ -63,34 +64,37 @@ const Products = () => {
   const cat = "Popular Products";
 
   return (
-    <section className="section">
-      <FlexRow className="primaryflexContainer">
-        {/* <ProductCatagories /> */}
-      </FlexRow>
-      <Container style={{ marginBottom: "35px" }}>
-        <h2
-          style={{
-            textTransform: "capitalize",
-            // marginBottom: "25px",
-            display: "inline",
-            borderBottom: "3px solid tomato",
-            paddingBottom: "6px",
-          }}
-        >
-          {cat}
-        </h2>
-        {loading && (
-          <div style={{ paddingLeft: "350px" }}>
-            <ScaleLoader size={35} color="blue" />
-          </div>
-        )}
-      </Container>
-      {/* <Container>{showModel && <CartModel />}</Container> */}
-      {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
-      <ProductsDetails shopCatagories={productData} />
+    <>
+      <Postheader />
+      <section className="section">
+        <FlexRow className="primaryflexContainer">
+          {/* <ProductCatagories /> */}
+        </FlexRow>
+        <Container style={{ marginBottom: "35px" }}>
+          <h2
+            style={{
+              textTransform: "capitalize",
+              // marginBottom: "25px",
+              display: "inline",
+              borderBottom: "3px solid tomato",
+              paddingBottom: "6px",
+            }}
+          >
+            {cat}
+          </h2>
+          {loading && (
+            <div style={{ paddingLeft: "350px" }}>
+              <ScaleLoader size={35} color="blue" />
+            </div>
+          )}
+        </Container>
+        {/* <Container>{showModel && <CartModel />}</Container> */}
+        {/* <ProductsDetails shopCatagories={shopCatagories} /> */}
+        <ProductsDetails shopCatagories={productData} />
 
-      <Container className="coursecontainer"></Container>
-    </section>
+        <Container className="coursecontainer"></Container>
+      </section>
+    </>
   );
 };
 

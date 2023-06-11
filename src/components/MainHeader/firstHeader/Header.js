@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./header.css";
-import { IoIosSearch, IoIosCart, IoIosHeartEmpty } from "react-icons/io";
+import { IoIosSearch, IoIosCart, IoIosBody } from "react-icons/io";
 import Card from "../../common/UI/Card/card";
 import Container from "../../common/UI/Card/Container";
 import { Link } from "react-router-dom";
@@ -58,13 +58,9 @@ export default function Header() {
           <nav>
             <ul>
               <li>
-                <a href="#">
-                  <IoIosHeartEmpty
-                    color="black"
-                    size={25}
-                    // onClick={handleCartOpen}
-                  />
-                </a>
+                <Link to={"User"}>
+                  <IoIosBody color="black" size={25} />
+                </Link>
               </li>
               <li>
                 <Link to="/Cart">

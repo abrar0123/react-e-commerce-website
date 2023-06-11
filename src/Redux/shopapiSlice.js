@@ -4,7 +4,9 @@ import axios from "axios";
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
+    console.log("myusers__11:", 344);
     try {
+      
       const response = await axios.get("https://fakestoreapi.com/products/");
       return response.data;
     } catch (error) {}
