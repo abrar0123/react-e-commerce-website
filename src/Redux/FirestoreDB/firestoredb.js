@@ -1,41 +1,9 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { db } from "../../firebaseConfige";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
-
-const mycollection = collection(db, "users");
-
-export const getFirestoreUsers = createAsyncThunk(
-  "users/fetchusers",
-  async () => {
-    try {
-      const data = await getDocs(mycollection);
-      const userdata = await data.docs.map((item) => ({
-        ...item.data(),
-        id: item.id,
-      }));
-      return userdata;
-    } catch (error) {}
-  }
-);
-
-export const deleteFirestoreUser = createAsyncThunk(
-  "users/deleteUser",
-  async (userId) => {
-    try {
-      const mycollection = doc(db, "users", userId);
-      deleteDoc(mycollection);
-      return userId;
-    } catch (error) {}
-  }
-);
-
-export const firestoreUsers1 = createAsyncThunk(
-  "users/firestoreUsers",
-
-  async () => {
-    console.log("myusers__11:", 344);
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  getFirestoreUsers,
+  deleteFirestoreUser,
+  insertIntoFirestore,
+} from "./firebaseApi";
 
 const firestore = createSlice({
   name: "firestore",
@@ -49,23 +17,8 @@ const firestore = createSlice({
   reducers: {
     firestoreInsert: (state, action) => {},
 
-    firestoreRead: async (state) => {
-      const data = await getDocs(mycollection);
-      const userdata = data.docs.map((item) => ({
-        ...item.data(),
-        id: item.id,
-      }));
-
-      state.users = userdata;
-      //   console.log("dkjd", state.users);
-    },
-
     firestoreUpdate: (state, action) => {},
-    firestoreDelete: (state, action) => {
-      const id = action.payload;
-      const mycollection = doc(db, "users", id);
-      deleteDoc(mycollection, id);
-    },
+    firestoreDelete: (state, action) => {},
   },
 
   extraReducers: (builder) => {
@@ -81,7 +34,7 @@ const firestore = createSlice({
         state.loading = false;
 
         state.error = actions.error.message;
-      })
+      }) // delete record
       .addCase(deleteFirestoreUser.pending, (state) => {
         state.loading = true;
       })
@@ -91,6 +44,19 @@ const firestore = createSlice({
         state.users = state.users.filter((user) => user.id !== userId);
       })
       .addCase(deleteFirestoreUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      }) // insert record
+      .addCase(insertIntoFirestore.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(insertIntoFirestore.fulfilled, (state, action) => {
+        state.loading = false;
+        
+        // const userRecord = action.payload;
+    
+      })
+      .addCase(insertIntoFirestore.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

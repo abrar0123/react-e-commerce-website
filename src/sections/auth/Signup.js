@@ -6,6 +6,8 @@ import { useState } from "react";
 import Login from "./Login";
 import { Firebase_ApiKey, api_Endpoints, db } from "../../firebaseConfige";
 import { addDoc, collection } from "firebase/firestore";
+import { insertIntoFirestore } from "../../Redux/FirestoreDB/firebaseApi";
+import { useDispatch } from "react-redux";
 
 const InputForm = () => {
   const [username, setusername] = useState("");
@@ -15,6 +17,7 @@ const InputForm = () => {
   const [IsLogin, setLogin] = useState(false);
   const [formISValid, setformISValid] = useState(true);
 
+  const Dispatch = useDispatch();
   const [errorText, seterrorText] = useState({
     uname: "",
     email: "",
@@ -102,19 +105,9 @@ const InputForm = () => {
     }
   };
 
-  const mycollection = collection(db, "users");
-
-  const firStoreData = async () => {
-    try {
-      const data = await addDoc(mycollection, {
-        email: email,
-        password: pass,
-        username: username,
-      });
-      console.log(data);
-    } catch (error) {
-      console.log("err__", error);
-    }
+  const firStoreData = () => {
+    const userdata = { email: email, password: pass, username: username };
+    Dispatch(insertIntoFirestore(userdata));
   };
 
   return (

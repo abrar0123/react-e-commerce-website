@@ -3,23 +3,14 @@ import React from "react";
 import { db } from "../../firebaseConfige";
 import Button from "../../components/common/UI/button/Button";
 import { useDispatch } from "react-redux";
-import {
-  deleteFirestoreUser,
-  firestoreActions,
-} from "../../Redux/FirestoreDB/firestoredb";
+import { deleteFirestoreUser } from "../../Redux/FirestoreDB/firebaseApi";
 
-export default function Userdetails({ users }) {
+export default function Userdetails({ users, recordedited,dbloading }) {
   const Dispatch = useDispatch();
 
-  const updateHandler = async (index) => {
-    try {
-      const userDoc = doc(db, "users", index);
-      const newField = { password: "tttt4444" };
-      const data = await updateDoc(userDoc, newField);
-      console.log("update__", data);
-    } catch (error) {
-      console.log("error__", error);
-    }
+  const updateHandler = async (index, uname, pass) => {
+    const rec = { uname, pass, index };
+    recordedited(rec);
   };
 
   const deleteHandler = (index) => {
@@ -50,7 +41,7 @@ export default function Userdetails({ users }) {
               <Button
                 style={{ backgroundColor: "green", margin: "5px" }}
                 onClick={() => {
-                  updateHandler(item.id);
+                  updateHandler(item.id, item.username, item.password);
                 }}
               >
                 Edit
