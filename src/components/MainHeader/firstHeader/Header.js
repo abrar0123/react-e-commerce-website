@@ -47,7 +47,7 @@ export default function Header() {
                 <Link to="/categories">categories</Link>
               </li>
               <li className="navItem">
-                <Link to="/categories">Login</Link>
+                <Link to="/login">Login</Link>
               </li>
               <li className="navItem">
                 <Link to={"Signup"}>Signup</Link>
